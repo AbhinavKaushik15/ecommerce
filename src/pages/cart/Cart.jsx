@@ -70,8 +70,8 @@ function Cart() {
     };
 
     var options = {
-      key: import.meta.env.VITE_API_KEY_1,
-      key_secret: import.meta.env.VITE_API_KEY_2,
+      key: import.meta.env.VITE_API_KEY_2,
+      key_secret: import.meta.env.VITE_API_KEY_3,
       amount: parseInt(grandTotal * 100),
       currency: "INR",
       order_receipt: "order_rcptid_" + name,
