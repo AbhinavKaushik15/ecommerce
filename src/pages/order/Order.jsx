@@ -62,7 +62,7 @@ const Order = () => {
                                     color: mode === "dark" ? "white" : "",
                                   }}
                                 >
-                                  {item.price}
+                                  ₹{item.price}
                                 </p>
                               </div>
                             </div>

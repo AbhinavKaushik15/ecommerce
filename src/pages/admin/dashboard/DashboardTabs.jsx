@@ -12,7 +12,7 @@ function DashboardTab() {
   let [isOpen, setIsOpen] = useState(false);
 
   const Context = useContext(MyContext);
-  const { deleteProduct, allProducts, editHandle, order } = Context;
+  const { deleteProduct, allProducts, editHandle, order, user } = Context;
 
   function closeModal() {
     setIsOpen(false);
@@ -128,7 +128,7 @@ function DashboardTab() {
                         date,
                       } = item;
                       return (
-                        <tbody>
+                        <tbody key={index}>
                           <tr
                             className="bg-gray-50 border-b  dark:border-gray-700"
                             style={{
@@ -227,6 +227,7 @@ function DashboardTab() {
                 </div>
               </div>
             </TabPanel>
+
             <TabPanel>
               {/* <Order order={order} setOrder={setOrder} setLoading={setLoading} /> */}
               <div className="relative overflow-x-auto mb-16">
@@ -238,7 +239,10 @@ function DashboardTab() {
                 </h1>
                 {order.map((allOrder, index) => {
                   return (
-                    <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                    <table
+                      key={index}
+                      className="w-full text-sm text-left text-gray-500 dark:text-gray-400"
+                    >
                       <thead
                         className="text-xs text-black uppercase bg-gray-200 "
                         style={{
@@ -292,7 +296,7 @@ function DashboardTab() {
                           description,
                         } = item;
                         return (
-                          <tbody>
+                          <tbody key={index}>
                             <tr
                               className="bg-gray-50 border-b  dark:border-gray-700"
                               style={{
@@ -413,7 +417,7 @@ function DashboardTab() {
                 </h1>
                 <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                   <thead
-                    className="text-xs text-black uppercase bg-gray-200 "
+                    className="text-xs w-full text-black uppercase bg-gray-200 "
                     style={{
                       backgroundColor: mode === "dark" ? "rgb(46 49 55)" : "",
                       color: mode === "dark" ? "white" : "",
@@ -428,74 +432,59 @@ function DashboardTab() {
                         Name
                       </th>
                       <th scope="col" className="px-6 py-3">
-                        Address
-                      </th>
-                      <th scope="col" className="px-6 py-3">
-                        Pincode
-                      </th>
-                      <th scope="col" className="px-6 py-3">
-                        Phone Number
+                        UID
                       </th>
                       <th scope="col" className="px-6 py-3">
                         Email
                       </th>
-                      <th scope="col" className="px-6 py-3">
-                        Date
-                      </th>
                     </tr>
                   </thead>
-                  <tbody>
-                    <tr
-                      className="bg-gray-50 border-b  dark:border-gray-700"
-                      style={{
-                        backgroundColor: mode === "dark" ? "rgb(46 49 55)" : "",
-                        color: mode === "dark" ? "white" : "",
-                      }}
-                    >
-                      <td
-                        className="px-6 py-4 text-black "
-                        style={{ color: mode === "dark" ? "white" : "" }}
-                      >
-                        1.
-                      </td>
-                      <td
-                        className="px-6 py-4 text-black "
-                        style={{ color: mode === "dark" ? "white" : "" }}
-                      >
-                        Name
-                      </td>
-                      <td
-                        className="px-6 py-4 text-black "
-                        style={{ color: mode === "dark" ? "white" : "" }}
-                      >
-                        Address
-                      </td>
-                      <td
-                        className="px-6 py-4 text-black "
-                        style={{ color: mode === "dark" ? "white" : "" }}
-                      >
-                        181919
-                      </td>
-                      <td
-                        className="px-6 py-4 text-black "
-                        style={{ color: mode === "dark" ? "white" : "" }}
-                      >
-                        1991818818
-                      </td>
-                      <td
-                        className="px-6 py-4 text-black "
-                        style={{ color: mode === "dark" ? "white" : "" }}
-                      >
-                        kkk@gmail.com
-                      </td>
-                      <td
-                        className="px-6 py-4 text-black "
-                        style={{ color: mode === "dark" ? "white" : "" }}
-                      >
-                        12 Aug 2019
-                      </td>
-                    </tr>
-                  </tbody>
+                  {user.map((item, index) => {
+                    const { name, uid, email, date } = item;
+                    return (
+                      <tbody key={index}>
+                        <tr
+                          className="bg-gray-50 border-b  dark:border-gray-700"
+                          style={{
+                            backgroundColor:
+                              mode === "dark" ? "rgb(46 49 55)" : "",
+                            color: mode === "dark" ? "white" : "",
+                          }}
+                        >
+                          <td
+                            className="px-6 py-4 text-black "
+                            style={{ color: mode === "dark" ? "white" : "" }}
+                          >
+                            {index + 1}.
+                          </td>
+                          <td
+                            className="px-6 py-4 text-black "
+                            style={{ color: mode === "dark" ? "white" : "" }}
+                          >
+                            {name}
+                          </td>
+                          <td
+                            className="px-6 py-4 text-black "
+                            style={{ color: mode === "dark" ? "white" : "" }}
+                          >
+                            {uid}
+                          </td>
+                          <td
+                            className="px-6 py-4 text-black "
+                            style={{ color: mode === "dark" ? "white" : "" }}
+                          >
+                            {email}
+                          </td>
+                          <td
+                            className="px-6 py-4 text-black "
+                            style={{ color: mode === "dark" ? "white" : "" }}
+                          >
+                            {date}
+                          </td>
+                        </tr>
+                      </tbody>
+                    );
+                  })}
                 </table>
               </div>
             </TabPanel>

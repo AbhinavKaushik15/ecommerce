@@ -173,9 +173,33 @@ const MyState = (props) => {
     }
   };
 
+  const [user, setUser] = useState([]);
+
+  const getUserData = async () => {
+    setLoading(true);
+    try {
+      const result = await getDocs(collection(fireDb, "users"));
+      const userArray = [];
+      result.forEach((doc) => {
+        userArray.push(doc.data());
+        setLoading(false);
+      });
+      setUser(userArray);
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
     getOrderData();
+    getUserData();
   }, []);
+
+  const [searchKey, setSearchKey] = useState("");
+  const [filterType, setFilterType] = useState("");
+  const [filterPrice, setFilterPrice] = useState("");
 
   return (
     <MyContext.Provider
@@ -194,6 +218,13 @@ const MyState = (props) => {
         editProduct,
         deleteProduct,
         order,
+        user,
+        searchKey,
+        setSearchKey,
+        filterType,
+        setFilterType,
+        filterPrice,
+        setFilterPrice,
       }}
     >
       {props.children}
