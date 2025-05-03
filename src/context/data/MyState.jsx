@@ -5,6 +5,8 @@ import {
   collection,
   deleteDoc,
   doc,
+  getDoc,
+  getDocs,
   onSnapshot,
   orderBy,
   query,
@@ -152,6 +154,29 @@ const MyState = (props) => {
     }
   };
 
+  const [order, setOrder] = useState([]);
+
+  const getOrderData = async () => {
+    setLoading(true);
+    try {
+      const result = await getDocs(collection(fireDb, "order"));
+      const ordersArray = [];
+      result.forEach((doc) => {
+        ordersArray.push(doc.data());
+        setLoading(false);
+      });
+      setOrder(ordersArray);
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    getOrderData();
+  }, []);
+
   return (
     <MyContext.Provider
       value={{
@@ -168,6 +193,7 @@ const MyState = (props) => {
         editHandle,
         editProduct,
         deleteProduct,
+        order,
       }}
     >
       {props.children}

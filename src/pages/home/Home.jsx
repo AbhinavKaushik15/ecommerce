@@ -5,14 +5,11 @@ import Filter from "../../components/filter/Filter";
 import ProductCard from "../../components/productCard/ProductCard";
 import Track from "../../components/track/Track";
 import Testimonial from "../../components/testimonial/Testimonial";
-import { useDispatch, useSelector } from "react-redux";
 import MyContext from "../../context/data/MyContext";
 
 const Home = () => {
   const Context = useContext(MyContext);
   const { showInstallButton, handleInstallClick } = Context;
-  const cart = useSelector((state) => state.cart);
-  const dispatch = useDispatch();
 
   return (
     <Layout>
