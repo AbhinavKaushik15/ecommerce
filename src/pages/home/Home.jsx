@@ -6,6 +6,7 @@ import ProductCard from "../../components/productCard/ProductCard";
 import Track from "../../components/track/Track";
 import Testimonial from "../../components/testimonial/Testimonial";
 import MyContext from "../../context/data/MyContext";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const Context = useContext(MyContext);
@@ -22,6 +23,13 @@ const Home = () => {
       </div>
       <Filter />
       <ProductCard />
+      <div className="flex justify-center -mt-10 mb-4">
+        <Link to={"/allproducts"}>
+          <button className=" bg-gray-300 px-5 py-2 rounded-xl">
+            See more
+          </button>
+        </Link>
+      </div>
       <Track />
       <Testimonial />
     </Layout>
