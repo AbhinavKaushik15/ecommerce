@@ -118,6 +118,19 @@ const Navbar = () => {
                       </Link>
                     )}
                   </div>
+                  <div className="flow-root">
+                    {user ? (
+                      ""
+                    ) : (
+                      <Link
+                        to={"/signup"}
+                        className="text-sm font-medium text-gray-700 "
+                        style={{ color: mode === "dark" ? "white" : "" }}
+                      >
+                        Lifafa
+                      </Link>
+                    )}
+                  </div>
 
                   <div className="flow-root">
                     {user ? (
