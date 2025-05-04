@@ -1,9 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import MyContext from "../../../context/data/MyContext";
 
 function UpdateProduct() {
   const Context = useContext(MyContext);
   const { products, setProducts, editProduct } = Context;
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div>
       <div className="flex justify-center items-center h-screen my-20">
@@ -75,7 +79,10 @@ function UpdateProduct() {
             ></textarea>
           </div>
           <div className=" flex justify-center mb-3">
-            <button onClick={editProduct} className=" bg-yellow-500 w-full text-black font-bold  px-2 py-2 rounded-lg">
+            <button
+              onClick={editProduct}
+              className=" bg-yellow-500 w-full text-black font-bold  px-2 py-2 rounded-lg"
+            >
               Update Product
             </button>
           </div>
