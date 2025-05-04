@@ -27,29 +27,29 @@ function Testimonial() {
                 <img
                   alt="testimonial"
                   className="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100"
-                  src="https://ecommerce-sk.vercel.app/img/kamal.png"
+                  src="/image/abhinav.png"
                 />
                 <p
                   style={{ color: mode === "dark" ? "white" : "" }}
                   className="leading-relaxed"
                 >
-                  Edison bulb retro cloud bread echo park, helvetica stumptown
-                  taiyaki taxidermy 90's cronut +1 kinfolk. Single-origin coffee
-                  ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut
-                  adaptogen squid fanny pack vaporware.
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Distinctio voluptatem cumque consequatur nobis doloribus
+                  numquam nemo iure eum magnam voluptas veniam, praesentium
+                  ipsum, suscipit deserunt eos. Saepe reiciendis nisi expedita.
                 </p>
                 <span className="inline-block h-1 w-10 rounded bg-pink-500 mt-6 mb-4" />
                 <h2
                   style={{ color: mode === "dark" ? "#ff4162" : "" }}
                   className="text-gray-900 font-medium title-font tracking-wider text-sm uppercase"
                 >
-                  Kamal Nayan Upadhyay
+                  Abhinav Kaushik
                 </h2>
                 <p
                   style={{ color: mode === "dark" ? "white" : "" }}
                   className="text-gray-500"
                 >
-                  Senior Product Designer
+                  Full Stack Developer
                 </p>
               </div>
             </div>

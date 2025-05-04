@@ -10,17 +10,17 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   const Context = useContext(MyContext);
-  // const { showInstallButton, handleInstallClick } = Context;
+  const { handleInstall } = Context;
 
   return (
     <Layout>
       <HeroSection />
-      {/* <div>
-        <h1>My PWA App</h1>
-        {showInstallButton && (
-          <button onClick={handleInstallClick}>Install App</button>
-        )}
-      </div> */}
+      <button
+        onClick={handleInstall}
+        className="ml-14 px-3 py-2 bg-pink-500 text-white rounded-md"
+      >
+        Download App
+      </button>
       <Filter />
       <ProductCard />
       <div className="flex justify-center -mt-10 mb-4">
