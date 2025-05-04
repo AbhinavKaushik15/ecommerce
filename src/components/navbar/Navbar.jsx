@@ -107,6 +107,34 @@ const Navbar = () => {
 
                   <div className="flow-root">
                     {user ? (
+                      ""
+                    ) : (
+                      <Link
+                        to={"/signup"}
+                        className="text-sm font-medium text-gray-700 "
+                        style={{ color: mode === "dark" ? "white" : "" }}
+                      >
+                        Signup
+                      </Link>
+                    )}
+                  </div>
+
+                  <div className="flow-root">
+                    {user ? (
+                      ""
+                    ) : (
+                      <Link
+                        to={"/login"}
+                        className="text-sm font-medium text-gray-700 "
+                        style={{ color: mode === "dark" ? "white" : "" }}
+                      >
+                        Login
+                      </Link>
+                    )}
+                  </div>
+
+                  <div className="flow-root">
+                    {user ? (
                       <a
                         onClick={logout}
                         className="-m-2 block p-2 font-medium text-gray-900 cursor-pointer"
@@ -258,6 +286,30 @@ const Navbar = () => {
                     </a>
                   ) : (
                     ""
+                  )}
+
+                  {user ? (
+                    ""
+                  ) : (
+                    <Link
+                      to={"/signup"}
+                      className="text-sm font-medium text-gray-700 "
+                      style={{ color: mode === "dark" ? "white" : "" }}
+                    >
+                      Signup
+                    </Link>
+                  )}
+
+                  {user ? (
+                    ""
+                  ) : (
+                    <Link
+                      to={"/login"}
+                      className="text-sm font-medium text-gray-700 "
+                      style={{ color: mode === "dark" ? "white" : "" }}
+                    >
+                      Login
+                    </Link>
                   )}
                 </div>
 

@@ -5,10 +5,12 @@ import {
   collection,
   deleteDoc,
   doc,
+  getDoc,
   getDocs,
   onSnapshot,
   orderBy,
   query,
+  QuerySnapshot,
   setDoc,
   Timestamp,
 } from "firebase/firestore";
