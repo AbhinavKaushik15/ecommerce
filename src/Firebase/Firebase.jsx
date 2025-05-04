@@ -3,7 +3,7 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_API_KEY_1,
+  apiKey: "AIzaSyCQjBnQwU3mHZMCFGqUON89plhsCkUoiSQ",
   authDomain: "shoppingapp-a116a.firebaseapp.com",
   projectId: "shoppingapp-a116a",
   storageBucket: "shoppingapp-a116a.firebasestorage.app",
