@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useState } from "react";
+import { Fragment, useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import MyContext from "../../context/data/MyContext";
 import { BsFillCloudSunFill } from "react-icons/bs";

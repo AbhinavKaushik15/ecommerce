@@ -15,12 +15,12 @@ const Home = () => {
   return (
     <Layout>
       <HeroSection />
-      {/* <button
+      <button
         onClick={handleInstall}
         className="ml-14 px-3 py-2 bg-pink-500 text-white rounded-md"
       >
         Download App
-      </button> */}
+      </button>
       <Filter />
       <ProductCard />
       <div className="flex justify-center -mt-10 mb-4">
