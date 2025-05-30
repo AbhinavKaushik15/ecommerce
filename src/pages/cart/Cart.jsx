@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import MyContext from "../../context/data/MyContext";
 import Layout from "../../components/layout/Layout";
 import Modal from "../../components/Modal/Modal";
@@ -112,6 +112,10 @@ function Cart() {
     var pay = new window.Razorpay(options);
     pay.open();
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <Layout>

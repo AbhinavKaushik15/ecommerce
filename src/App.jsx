@@ -9,7 +9,6 @@ import {
 import Order from "./pages/order/Order";
 import Dashboard from "./pages/admin/dashboard/Dashboard";
 import AllProduct from "./pages/allProducts/AllProduct";
-import Cart from "./pages/cart/Cart";
 import NoPage from "./pages/noPage/NoPage";
 import Home from "./pages/home/Home";
 import Signup from "./pages/registration/Signup";
@@ -18,6 +17,7 @@ import ProductInfo from "./pages/ProductInfo/ProductInfo";
 import AddProduct from "./pages/admin/page/AddProduct";
 import UpdateProduct from "./pages/admin/page/UpdateProduct";
 import { ToastContainer } from "react-toastify";
+import Cart from "./pages/cart/Cart";
 
 const App = () => {
   return (

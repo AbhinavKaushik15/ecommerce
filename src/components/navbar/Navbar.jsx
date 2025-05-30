@@ -233,7 +233,10 @@ const Navbar = () => {
                       className=" text-2xl font-bold text-black  px-2 py-1 rounded"
                       style={{ color: mode === "dark" ? "white" : "" }}
                     >
-                      E-Bharat
+                      <img className="w-20y"
+                        src="https://sdmntprwestus.oaiusercontent.com/files/00000000-facc-6230-8fb0-792ea9926858/raw?se=2025-05-30T15%3A42%3A14Z&sp=r&sv=2024-08-04&sr=b&scid=56eed284-2746-593a-90d5-c158b44933d1&skoid=b64a43d9-3512-45c2-98b4-dea55d094240&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-05-29T23%3A49%3A32Z&ske=2025-05-30T23%3A49%3A32Z&sks=b&skv=2024-08-04&sig=NNA21zOmjt%2B%2BtrTTkqrSwRorG1%2BYR1%2Bh6yp4CfeGVSM%3D"
+                        alt=""
+                      />
                     </h1>
                   </div>
                 </Link>
@@ -310,7 +313,7 @@ const Navbar = () => {
 
                 <button
                   onClick={handleInstall}
-                  className="lg:ml-6 cursor-pointer transition-all bg-pink-600 text-white px-3 py-1 rounded-lg border-pink-600 border-b-[4px] hover:brightness-110 hidden lg:flex hover:-translate-y-[1px] hover:border-b-[6px] active:border-b-[2px] active:brightness-90 active:translate-y-[2px]"
+                  className="lg:ml-6 cursor-pointer transition-all bg-pink-600 text-white px-3 py-1 rounded-lg border-pink-600 border-b-[4px] hover:brightness-110 hidden lg:flex hover:-translate-y-[1px] hover:border-b-[6px] active:border-b-[2px] active:brightness-90 active:translate-y-[2px] text-sm font-[600]"
                 >
                   Download App
                 </button>

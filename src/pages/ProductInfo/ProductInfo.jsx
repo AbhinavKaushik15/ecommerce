@@ -40,7 +40,6 @@ function ProductInfo() {
 
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cartItems));
-    toast.success("add to cart");
   }, [cartItems]);
 
   return (
@@ -69,7 +68,7 @@ function ProductInfo() {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth={2}
-                      className="w-4 h-4 text-indigo-500"
+                      className="w-4 h-4 text-[#E60076]"
                       viewBox="0 0 24 24"
                     >
                       <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
@@ -80,7 +79,7 @@ function ProductInfo() {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth={2}
-                      className="w-4 h-4 text-indigo-500"
+                      className="w-4 h-4 text-[#E60076]"
                       viewBox="0 0 24 24"
                     >
                       <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
@@ -91,7 +90,7 @@ function ProductInfo() {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth={2}
-                      className="w-4 h-4 text-indigo-500"
+                      className="w-4 h-4 text-[#E60076]"
                       viewBox="0 0 24 24"
                     >
                       <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
@@ -102,7 +101,7 @@ function ProductInfo() {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth={2}
-                      className="w-4 h-4 text-indigo-500"
+                      className="w-4 h-4 text-[#E60076]"
                       viewBox="0 0 24 24"
                     >
                       <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
@@ -113,7 +112,7 @@ function ProductInfo() {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth={2}
-                      className="w-4 h-4 text-indigo-500"
+                      className="w-4 h-4 text-[#E60076]"
                       viewBox="0 0 24 24"
                     >
                       <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
@@ -167,7 +166,10 @@ function ProductInfo() {
                   <span className="title-font font-medium text-2xl text-gray-900">
                     ₹{products.price}
                   </span>
-                  <button onClick={()=>addCart(products)} className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
+                  <button
+                    onClick={() => addCart(products)}
+                    className="flex ml-auto text-white bg-[#E60076] border-0 py-2 px-6 focus:outline-none hover:bg-[#E60076] rounded"
+                  >
                     Add To Cart
                   </button>
                   <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
