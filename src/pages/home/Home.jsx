@@ -1,26 +1,20 @@
-import React, { useContext } from "react";
 import Layout from "../../components/layout/Layout";
 import HeroSection from "../../components/heroSection/HeroSection";
 import Filter from "../../components/filter/Filter";
 import ProductCard from "../../components/productCard/ProductCard";
 import Track from "../../components/track/Track";
 import Testimonial from "../../components/testimonial/Testimonial";
-import MyContext from "../../context/data/MyContext";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 const Home = () => {
-  const Context = useContext(MyContext);
-  const { handleInstall } = Context;
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <Layout>
       <HeroSection />
-      <button
-        onClick={handleInstall}
-        className="ml-14 px-3 py-2 bg-pink-500 text-white rounded-md"
-      >
-        Download App
-      </button>
       <Filter />
       <ProductCard />
       <div className="flex justify-center -mt-10 mb-4">

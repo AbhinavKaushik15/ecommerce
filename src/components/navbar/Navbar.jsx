@@ -11,7 +11,7 @@ import { useSelector } from "react-redux";
 const Navbar = () => {
   const [open, setOpen] = useState("");
   const Context = useContext(MyContext);
-  const { mode, toggleMode } = Context;
+  const { mode, toggleMode, handleInstall } = Context;
 
   const user = JSON.parse(localStorage.getItem("user"));
 
@@ -39,7 +39,7 @@ const Navbar = () => {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <div className="fixed inset-0 bg-black bg-opacity-25" />
+            <div className="fixed inset-0 bg-[#fafafa63] bg-opacity-25" />
           </Transition.Child>
 
           <div className="fixed inset-0 z-40 flex">
@@ -72,7 +72,7 @@ const Navbar = () => {
                 <div className="space-y-6 border-t border-gray-200 px-4 py-6">
                   <Link
                     to={"/allproducts"}
-                    className="text-sm font-medium text-gray-900 "
+                    className="text-sm font-medium text-gray-900"
                     style={{ color: mode === "dark" ? "white" : "" }}
                   >
                     All Products
@@ -308,34 +308,16 @@ const Navbar = () => {
                   )}
                 </div>
 
-                <div className="hidden lg:ml-8 lg:flex">
-                  <a href="#" className="flex items-center text-gray-700 ">
-                    <img
-                      src="https://ecommerce-sk.vercel.app/img/indiaflag.png"
-                      alt=""
-                      className="block h-auto w-5 flex-shrink-0"
-                    />
-                    <span
-                      className="ml-3 block text-sm font-medium"
-                      style={{ color: mode === "dark" ? "white" : "" }}
-                    >
-                      INDIA
-                    </span>
-                  </a>
-                </div>
-                <div className="hidden lg:ml-8 lg:flex">
-                  <a href="#" className="flex items-center text-gray-700 ">
-                    <img
-                      className="inline-block w-10 h-10 rounded-full object-cover"
-                      src="https://images.unsplash.com/photo-1618001789159-ffffe6f96ef2?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    />
-                  </a>
-                </div>
+                <button
+                  onClick={handleInstall}
+                  className="lg:ml-6 cursor-pointer transition-all bg-pink-600 text-white px-3 py-1 rounded-lg border-pink-600 border-b-[4px] hover:brightness-110 hidden lg:flex hover:-translate-y-[1px] hover:border-b-[6px] active:border-b-[2px] active:brightness-90 active:translate-y-[2px]"
+                >
+                  Download App
+                </button>
 
-                {/* Search */}
+                {/* Dark mode */}
                 <div className="flex lg:ml-6">
                   <button className="" onClick={toggleMode}>
-                    {/* <MdDarkMode size={35} style={{ color: mode === 'dark' ? 'white' : '' }} /> */}
                     {mode === "light" ? (
                       <FiSun className="" size={30} />
                     ) : "dark" ? (

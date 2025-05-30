@@ -18,26 +18,25 @@ import { toast } from "react-toastify";
 import { fireDb } from "../../Firebase/Firebase";
 
 const MyState = (props) => {
-  // const [deferredPrompt, setDeferredPrompt] = useState(null);
+  const [deferredPrompt, setDeferredPrompt] = useState(null);
 
-  // useEffect(() => {
-  //   window.addEventListener("beforeinstallprompt", (e) => {
-  //     e.preventDefault();
-  //     setDeferredPrompt(e);
-  //   });
-  // }, []);
+  useEffect(() => {
+    window.addEventListener("beforeinstallprompt", (e) => {
+      e.preventDefault();
+      setDeferredPrompt(e);
+    });
+  }, []);
 
-  // const handleInstall = () => {
-  //   if (deferredPrompt) {
-  //     deferredPrompt.prompt();
-  //     deferredPrompt.userChoice.then((choiceResult) => {
-  //       if (choiceResult.outcome === "accepted") {
-  //         console.log("PWA installed");
-  //       }
-  //       setDeferredPrompt(null);
-  //     });
-  //   }
-  // };
+  const handleInstall = () => {
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === "accepted") {
+        }
+        setDeferredPrompt(null);
+      });
+    }
+  };
 
   const [mode, setMode] = useState("light");
 
@@ -199,6 +198,7 @@ const MyState = (props) => {
   return (
     <MyContext.Provider
       value={{
+        handleInstall,
         mode,
         toggleMode,
         loading,

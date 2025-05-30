@@ -52,12 +52,14 @@ function ProductCard() {
               } = item;
               return (
                 <div
-                  onClick={() => (window.location.href = `/productinfo/${id}`)}
                   key={index}
-                  className="p-4 md:w-1/4 drop-shadow-lg"
+                  className="p-4 md:w-1/4 drop-shadow-lg bg-red-400"
                 >
                   <div
-                    className="h-full border-2 hover:shadow-gray-100 hover:shadow-2xl transition-shadow duration-300 ease-in-out border-gray-200 border-opacity-60 rounded-2xl overflow-hidden"
+                    onClick={() =>
+                      (window.location.href = `/productinfo/${id}`)
+                    } 
+                    className="relative h-[85vh] border-2 hover:shadow-gray-100 hover:shadow-2xl transition-shadow duration-300 ease-in-out border-gray-300 border-opacity-60 rounded-2xl overflow-hidden bg-yellow-400"
                     style={{
                       backgroundColor: mode === "dark" ? "rgb(46 49 55)" : "",
                       color: mode === "dark" ? "white" : "",
@@ -92,15 +94,15 @@ function ProductCard() {
                       >
                         ₹ {price}
                       </p>
-                      <div className=" flex justify-center">
-                        <button
-                          onClick={() => addCart(item)}
-                          type="button"
-                          className="focus:outline-none text-white bg-pink-600 hover:bg-pink-700 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm w-full  py-2"
-                        >
-                          Add To Cart
-                        </button>
-                      </div>
+                    </div>
+                    <div className="absolute bottom-3 z-[1000000] left-1/2 -translate-x-1/2">
+                      <button
+                        onClick={() => addCart(item)}
+                        type="button"
+                        className="focus:outline-none text-white bg-pink-600 hover:bg-pink-700 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm w-full py-2 px-10 whitespace-nowrap"
+                      >
+                        Add To Cart
+                      </button>
                     </div>
                   </div>
                 </div>
