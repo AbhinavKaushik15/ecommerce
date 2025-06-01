@@ -62,27 +62,28 @@ const Navbar = () => {
                 <div className="flex px-4 pb-2 pt-28">
                   <button
                     type="button"
-                    className="-m-2 inline-flex items-center justify-center rounded-md p-2 text-gray-400"
+                    className="-m-2 inline-flex items-center justify-center hover:text-pink-600 rounded-md p-2 text-gray-400"
                     onClick={() => setOpen(false)}
                   >
                     <span className="sr-only">Close menu</span>
                     <RxCross2 />
                   </button>
                 </div>
-                <div className="space-y-6 border-t border-gray-200 px-4 py-6">
+                <div className="border-t border-gray-200 px-4 py-6">
                   <Link
                     to={"/allproducts"}
-                    className="text-sm font-medium text-gray-900"
+                    className="text-md hover:text-pink-600 font-medium text-gray-900"
                     style={{ color: mode === "dark" ? "white" : "" }}
                   >
                     All Products
                   </Link>
+
                   <div className="flow-root">
                     {user ? (
                       <Link
                         to={"/order"}
                         style={{ color: mode === "dark" ? "white" : "" }}
-                        className="-m-2 block p-2 font-medium text-gray-900"
+                        className="mt-5 hover:text-pink-600 block font-medium text-gray-900"
                       >
                         Order
                       </Link>
@@ -95,7 +96,7 @@ const Navbar = () => {
                     <div className="flow-root">
                       <Link
                         to={"/dashboard"}
-                        className="-m-2 block p-2 font-medium text-gray-900"
+                        className="mt-5 block font-medium hover:text-pink-600 text-gray-900"
                         style={{ color: mode === "dark" ? "white" : "" }}
                       >
                         admin
@@ -111,7 +112,7 @@ const Navbar = () => {
                     ) : (
                       <Link
                         to={"/signup"}
-                        className="text-sm font-medium text-gray-700 "
+                        className="mt-5 text-sm hover:text-pink-600 font-medium text-gray-700 "
                         style={{ color: mode === "dark" ? "white" : "" }}
                       >
                         Signup
@@ -125,7 +126,7 @@ const Navbar = () => {
                     ) : (
                       <Link
                         to={"/login"}
-                        className="text-sm font-medium text-gray-700 "
+                        className="mt-5 text-sm font-medium hover:text-pink-600 text-gray-700 "
                         style={{ color: mode === "dark" ? "white" : "" }}
                       >
                         Login
@@ -137,7 +138,7 @@ const Navbar = () => {
                     {user ? (
                       <a
                         onClick={logout}
-                        className="-m-2 block p-2 font-medium text-gray-900 cursor-pointer"
+                        className="mt-5 block font-medium hover:text-pink-600 text-gray-900 cursor-pointer"
                         style={{ color: mode === "dark" ? "white" : "" }}
                       >
                         Logout
@@ -146,35 +147,6 @@ const Navbar = () => {
                       ""
                     )}
                   </div>
-                  <div className="flow-root">
-                    <Link
-                      to={"/"}
-                      className="-m-2 block p-2 font-medium text-gray-900 cursor-pointer"
-                    >
-                      <img
-                        className="inline-block w-10 h-10 rounded-full"
-                        src="https://overreacted.io/static/profile-pic-c715447ce38098828758e525a1128b87.jpg"
-                        alt="Dan_Abromov"
-                      />
-                    </Link>
-                  </div>
-                </div>
-
-                <div className="border-t border-gray-200 px-4 py-6">
-                  <a href="#" className="-m-2 flex items-center p-2">
-                    <img
-                      src="https://images.unsplash.com/photo-1618001789159-ffffe6f96ef2?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                      alt=""
-                      className="block h-auto w-5 flex-shrink-0 object-cover"
-                    />
-                    <span
-                      className="ml-3 block text-base font-medium text-gray-900"
-                      style={{ color: mode === "dark" ? "white" : "" }}
-                    >
-                      INDIA
-                    </span>
-                    <span className="sr-only">, change currency</span>
-                  </a>
                 </div>
               </Dialog.Panel>
             </Transition.Child>
@@ -226,17 +198,14 @@ const Navbar = () => {
               </button>
 
               {/* Logo */}
-              <div className="ml-4 flex lg:ml-0">
+              <div className="flex lg:ml-0">
                 <Link to={"/"} className="flex">
                   <div className="flex ">
                     <h1
-                      className=" text-2xl font-bold text-black  px-2 py-1 rounded"
+                      className="text-2xl font-bold text-black px-2 py-1 rounded"
                       style={{ color: mode === "dark" ? "white" : "" }}
                     >
-                      <img className="w-20"
-                        src="image/E-bharat.png"
-                        alt=""
-                      />
+                      <img className="w-20" src="image/E-bharat.png" alt="" />
                     </h1>
                   </div>
                 </Link>
