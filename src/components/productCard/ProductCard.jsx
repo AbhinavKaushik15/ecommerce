@@ -24,7 +24,7 @@ function ProductCard() {
 
   return (
     <section className="text-gray-600 body-font">
-      <div className="container px-5 py-8 md:py-16 mx-auto">
+      <div className="container px-3 py-8 md:py-16 mx-auto">
         <div className="lg:w-1/2 w-full mb-6 lg:mb-10">
           <h1
             className="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900"
@@ -35,7 +35,7 @@ function ProductCard() {
           <div className="h-1 w-20 bg-pink-600 rounded"></div>
         </div>
 
-        <div className="flex flex-wrap -m-4">
+        <div className="w-full flex flex-wrap mx-auto">
           {allProducts
             .filter((obj) => obj.title.toLowerCase().includes(searchKey))
             .filter((obj) => obj.category.toLowerCase().includes(filterType))
@@ -52,7 +52,7 @@ function ProductCard() {
                 id,
               } = item;
               return (
-                <div key={index} className="p-4 md:w-1/4 drop-shadow-lg">
+                <div key={index} className="p-2 mx-auto sm:mx-0 w-[55vh] sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 drop-shadow-lg">
                   <div
                     onClick={() =>
                       (window.location.href = `/productinfo/${id}`)
@@ -65,7 +65,7 @@ function ProductCard() {
                   >
                     <div className="flex justify-center cursor-pointer">
                       <img
-                        className="rounded-2xl w-full h-80 p-2 hover:scale-110 transition-scale-110  duration-300 ease-in-out"
+                        className="rounded-2xl w-full h-80 p-2 hover:scale-110 transition-scale-110  duration-300 ease-in-out object-cover object-top"
                         src={imageUrl}
                         alt="blog"
                       />
@@ -75,11 +75,7 @@ function ProductCard() {
                         className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1"
                         style={{ color: mode === "dark" ? "white" : "" }}
                       >
-                        <img
-                          className="w-14"
-                          src="https://sdmntprwestus.oaiusercontent.com/files/00000000-facc-6230-8fb0-792ea9926858/raw?se=2025-05-30T15%3A42%3A14Z&sp=r&sv=2024-08-04&sr=b&scid=56eed284-2746-593a-90d5-c158b44933d1&skoid=b64a43d9-3512-45c2-98b4-dea55d094240&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-05-29T23%3A49%3A32Z&ske=2025-05-30T23%3A49%3A32Z&sks=b&skv=2024-08-04&sig=NNA21zOmjt%2B%2BtrTTkqrSwRorG1%2BYR1%2Bh6yp4CfeGVSM%3D"
-                          alt=""
-                        />
+                        <img className="w-14" src="image/E-bharat.png" alt="" />
                       </h2>
                       <h1
                         className="title-font text-lg font-medium text-gray-900 mb-2 leading-5"
@@ -88,7 +84,7 @@ function ProductCard() {
                         {title}
                       </h1>
                       <p className="leading-relaxed mb-3">
-                        {item.description.slice(0, 30)}...
+                        {item.description.slice(0, 25)}...
                       </p>
                       <p
                         className="leading-relaxed mb-3"
@@ -97,11 +93,11 @@ function ProductCard() {
                         ₹ {price}
                       </p>
                     </div>
-                    <div className="absolute bottom-2 z-[1000000] left-1/2 -translate-x-1/2">
+                    <div className="absolute bottom-3 z-[1000000] left-1/2 -translate-x-1/2">
                       <button
-                        onClick={addCart}
+                        onClick={() => addCart()}
                         type="button"
-                        className="focus:outline-none text-white bg-pink-600 hover:bg-pink-700 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm w-full py-2 px-20 whitespace-nowrap"
+                        className="focus:outline-none text-white bg-pink-600 hover:bg-pink-700 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm w-[45vw] sm:w-[35vh] md:w-[30vh] lg:w-[30vh] xl:w-[32vh] py-2 whitespace-nowrap"
                       >
                         Add To Cart
                       </button>

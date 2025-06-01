@@ -106,7 +106,7 @@ function Track() {
                 >
                   Exciting Offers
                 </h2>
-                <p className="leading-relaxed">
+                <p className="leading-relaxed whitespace-nowrap">
                   We provide amazing offers & discounts
                 </p>
               </div>
