@@ -7,12 +7,9 @@ import MyContext from "../../../context/data/MyContext";
 import { Link } from "react-router-dom";
 
 function DashboardTab() {
-  const context = useContext(MyContext);
-  const { mode } = context;
-  let [isOpen, setIsOpen] = useState(false);
-
   const Context = useContext(MyContext);
-  const { deleteProduct, allProducts, editHandle, order, user } = Context;
+  const { mode, deleteProduct, allProducts, editHandle, order, user } = Context;
+  let [isOpen, setIsOpen] = useState(false);
 
   function closeModal() {
     setIsOpen(false);
@@ -130,7 +127,7 @@ function DashboardTab() {
                       return (
                         <tbody key={index}>
                           <tr
-                            className="bg-gray-50 border-b  dark:border-gray-700"
+                            className="bg-gray-50 border-b dark:border-gray-700"
                             style={{
                               backgroundColor:
                                 mode === "dark" ? "rgb(46 49 55)" : "",
@@ -147,10 +144,14 @@ function DashboardTab() {
                               scope="row"
                               className="px-6 py-4 font-medium text-black whitespace-nowrap"
                             >
-                              <img className="w-16" src={imageUrl} alt="img" />
+                              <img
+                                className="w-16 h-20 object-cover"
+                                src={imageUrl}
+                                alt="img"
+                              />
                             </th>
                             <td
-                              className="px-6 py-4 text-black "
+                              className="px-6 py-4 text-black"
                               style={{ color: mode === "dark" ? "white" : "" }}
                             >
                               {title}
