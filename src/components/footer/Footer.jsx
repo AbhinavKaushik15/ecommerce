@@ -7,13 +7,13 @@ export default function Footer() {
   const { toggleMode, mode } = context;
   return (
     <footer
-      className="text-gray-600 body-font bg-gray-300"
+      className="text-gray-600 body-font bg-gray-300 mt-10"
       style={{
         backgroundColor: mode === "dark" ? "rgb(46 49 55)" : "",
         color: mode === "dark" ? "white" : "",
       }}
     >
-      <div className="container px-5 py-24 mx-auto">
+      <div className="container px-5 py-10 mx-auto">
         <div className="flex flex-wrap md:text-left text-center order-first">
           <div className="w-full px-4">
             <h2
@@ -131,7 +131,7 @@ export default function Footer() {
           <Link to={"/"} className="flex">
             <div className="flex ">
               <h1
-                className=" text-2xl font-bold text-black  px-2 rounded"
+                className="text-2xl font-bold text-black px-2 rounded"
                 style={{ color: mode === "dark" ? "white" : "" }}
               >
                 <img className="w-20" src="image/E-bharat.png" alt="" />

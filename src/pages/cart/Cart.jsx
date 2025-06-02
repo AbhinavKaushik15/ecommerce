@@ -80,6 +80,9 @@ function Cart() {
       handler: function (response) {
         console.log(response);
         toast.success("Payment Successful");
+        setTimeout(() => {
+          window.location.href = "/order";
+        }, 2000);
 
         const paymentId = response.razorpay_payment_id;
 
@@ -134,7 +137,7 @@ function Cart() {
               return (
                 <div
                   key={index}
-                  className="justify-between mb-6 rounded-lg border  drop-shadow-xl bg-white p-6  sm:flex  sm:justify-start"
+                  className="justify-between mb-6 rounded-lg border  drop-shadow-xl bg-white p-6  sm:flex sm:justify-start"
                   style={{
                     backgroundColor: mode === "dark" ? "rgb(32 33 34)" : "",
                     color: mode === "dark" ? "white" : "",
@@ -143,7 +146,7 @@ function Cart() {
                   <img
                     src={imageUrl}
                     alt="product-image"
-                    className="w-full rounded-lg sm:w-40"
+                    className="w-full rounded-lg sm:w-44 object-cover"
                   />
                   <div className="sm:ml-4 sm:flex sm:w-full sm:justify-between">
                     <div className="mt-5 sm:mt-0">

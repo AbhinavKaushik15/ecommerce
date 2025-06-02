@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Layout from "../../components/layout/Layout";
 import { useParams } from "react-router-dom";
 import { doc, getDoc } from "firebase/firestore";
@@ -6,7 +6,6 @@ import { fireDb } from "../../Firebase/Firebase";
 import MyContext from "../../context/data/MyContext";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../store/reducers/CartReducer";
-import { toast } from "react-toastify";
 
 function ProductInfo() {
   const Context = useContext(MyContext);
@@ -47,13 +46,13 @@ function ProductInfo() {
       <section className="text-gray-600 body-font overflow-hidden">
         <div className="container px-5 py-10 mx-auto">
           {products && (
-            <div className="lg:w-4/5 mx-auto flex flex-wrap">
+            <div className="sm:w-4/5 mx-auto flex flex-wrap">
               <img
                 alt="ecommerce"
-                className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded"
+                className="sm:w-1/2 w-full h-[70vh] sm:h-auto object-cover object-top sm:object-center rounded"
                 src={products.imageUrl}
               />
-              <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
+              <div className="sm:w-1/2 w-full sm:pl-10 sm:py-6 mt-6 sm:mt-0">
                 <h2 className="text-sm title-font text-gray-500 tracking-widest">
                   BRAND NAME
                 </h2>
@@ -168,11 +167,11 @@ function ProductInfo() {
                   </span>
                   <button
                     onClick={() => addCart(products)}
-                    className="flex ml-auto text-white bg-[#E60076] border-0 py-2 px-6 focus:outline-none hover:bg-[#E60076] rounded"
+                    className="flex ml-auto text-white bg-[#E60076] border-0 whitespace-nowrap py-2 px-3 md:px-6 focus:outline-none hover:bg-[#E60076] rounded"
                   >
                     Add To Cart
                   </button>
-                  <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
+                  <button className="rounded-full sm:hidden w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
                     <svg
                       fill="currentColor"
                       strokeLinecap="round"

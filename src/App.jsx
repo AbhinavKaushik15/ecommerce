@@ -1,4 +1,3 @@
-import React from "react";
 import MyState from "./context/data/MyState";
 import {
   Navigate,
@@ -7,6 +6,7 @@ import {
   Routes,
 } from "react-router-dom";
 import Order from "./pages/order/Order";
+import Cart from "./pages/cart/Cart";
 import Dashboard from "./pages/admin/dashboard/Dashboard";
 import AllProduct from "./pages/allProducts/AllProduct";
 import NoPage from "./pages/noPage/NoPage";
@@ -17,7 +17,6 @@ import ProductInfo from "./pages/ProductInfo/ProductInfo";
 import AddProduct from "./pages/admin/page/AddProduct";
 import UpdateProduct from "./pages/admin/page/UpdateProduct";
 import { ToastContainer } from "react-toastify";
-import Cart from "./pages/cart/Cart";
 
 const App = () => {
   return (

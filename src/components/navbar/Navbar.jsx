@@ -72,7 +72,7 @@ const Navbar = () => {
                 <div className="border-t border-gray-200 px-4 py-6">
                   <Link
                     to={"/allproducts"}
-                    className="text-md hover:text-pink-600 font-medium text-gray-900"
+                    className="text-md block hover:text-pink-600 font-medium text-gray-900"
                     style={{ color: mode === "dark" ? "white" : "" }}
                   >
                     All Products
@@ -112,7 +112,7 @@ const Navbar = () => {
                     ) : (
                       <Link
                         to={"/signup"}
-                        className="mt-5 text-sm hover:text-pink-600 font-medium text-gray-700 "
+                        className="mt-5 block text-md hover:text-pink-600 font-medium text-gray-900 "
                         style={{ color: mode === "dark" ? "white" : "" }}
                       >
                         Signup
@@ -126,7 +126,7 @@ const Navbar = () => {
                     ) : (
                       <Link
                         to={"/login"}
-                        className="mt-5 text-sm font-medium hover:text-pink-600 text-gray-700 "
+                        className="mt-5 block text-md font-medium hover:text-pink-600 text-gray-900 "
                         style={{ color: mode === "dark" ? "white" : "" }}
                       >
                         Login
@@ -147,6 +147,12 @@ const Navbar = () => {
                       ""
                     )}
                   </div>
+                  <button
+                    onClick={handleInstall}
+                    className="cursor-pointer transition-all bg-pink-600 text-white px-3 py-1 rounded-lg border-pink-600 border-b-[4px] hover:brightness-110 flex hover:-translate-y-[1px] hover:border-b-[6px] active:border-b-[2px] active:brightness-90 active:translate-y-[2px] text-sm font-[600] mt-6"
+                  >
+                    Download App
+                  </button>
                 </div>
               </Dialog.Panel>
             </Transition.Child>
