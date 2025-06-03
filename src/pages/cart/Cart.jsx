@@ -3,10 +3,10 @@ import MyContext from "../../context/data/MyContext";
 import Layout from "../../components/layout/Layout";
 import Modal from "../../components/Modal/Modal";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteFromCart } from "../../store/reducers/CartReducer";
 import { toast } from "react-toastify";
 import { addDoc, collection } from "firebase/firestore";
 import { fireDb } from "../../Firebase/Firebase";
+import { deleteFromCart } from "../../store/reducers/CartReducer";
 
 function Cart() {
   const Context = useContext(MyContext);
@@ -14,6 +14,7 @@ function Cart() {
   const dispatch = useDispatch();
 
   const cartItems = useSelector((state) => state.cart);
+  console.log(cartItems);
 
   const deleteCart = (item) => {
     dispatch(deleteFromCart(item));
@@ -72,7 +73,7 @@ function Cart() {
     var options = {
       key: import.meta.env.VITE_API_KEY_2,
       key_secret: import.meta.env.VITE_API_KEY_3,
-      amount: parseInt(grandTotal * 100),
+      amount: parseInt(grandTotal * 49),
       currency: "INR",
       order_receipt: "order_rcptid_" + name,
       name: "E-Bharat",

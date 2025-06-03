@@ -121,7 +121,7 @@ const MyState = (props) => {
     setProducts(item);
   };
 
-  const editProduct = async (item) => {
+  const editProduct = async () => {
     setLoading(true);
     try {
       await setDoc(doc(fireDb, "products", products.id), products);

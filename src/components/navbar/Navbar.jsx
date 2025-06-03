@@ -152,7 +152,7 @@ const Navbar = () => {
                     className="cursor-pointer transition-all bg-pink-600 text-white px-3 py-1 rounded-lg border-pink-600 border-b-[4px] hover:brightness-110 flex hover:-translate-y-[1px] hover:border-b-[6px] active:border-b-[2px] active:brightness-90 active:translate-y-[2px] text-sm font-[600] mt-6"
                   >
                     Download App
-                  </button>
+                  </button> 
                 </div>
               </Dialog.Panel>
             </Transition.Child>

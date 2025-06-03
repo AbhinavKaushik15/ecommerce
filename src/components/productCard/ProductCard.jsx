@@ -1,8 +1,8 @@
 import { useContext, useEffect } from "react";
 import MyContext from "../../context/data/MyContext";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../../store/reducers/CartReducer";
 import { toast } from "react-toastify";
+import { addToCart } from "../../store/reducers/CartReducer";
 
 function ProductCard() {
   const context = useContext(MyContext);
@@ -52,12 +52,15 @@ function ProductCard() {
                 id,
               } = item;
               return (
-                <div key={index} className="p-2 mx-auto sm:mx-0 w-[55vh] sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 drop-shadow-lg">
+                <div
+                  key={index}
+                  className="p-2 mx-auto sm:mx-0 w-[55vh] sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 drop-shadow-lg"
+                >
                   <div
                     onClick={() =>
                       (window.location.href = `/productinfo/${id}`)
                     }
-                    className="relative h-[85vh] border-2 hover:shadow-gray-100 hover:shadow-2xl transition-shadow duration-300 ease-in-out border-gray-300 border-opacity-60 rounded-2xl overflow-hidden"
+                    className="relative h-[80vh] border-2 hover:shadow-gray-100 hover:shadow-2xl transition-shadow duration-300 ease-in-out border-gray-300 border-opacity-60 rounded-2xl overflow-hidden"
                     style={{
                       backgroundColor: mode === "dark" ? "rgb(46 49 55)" : "",
                       color: mode === "dark" ? "white" : "",
@@ -65,14 +68,14 @@ function ProductCard() {
                   >
                     <div className="flex justify-center cursor-pointer">
                       <img
-                        className="rounded-2xl w-full h-80 p-2 hover:scale-110 transition-scale-110  duration-300 ease-in-out object-cover object-top"
+                        className="rounded-2xl w-full h-72 p-2 hover:scale-110 transition-scale-110  duration-300 ease-in-out object-cover object-top"
                         src={imageUrl}
                         alt="blog"
                       />
                     </div>
                     <div className="px-5 border-t-2">
                       <h2
-                        className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1"
+                        className="tracking-widest text-xs title-font font-medium text-gray-400"
                         style={{ color: mode === "dark" ? "white" : "" }}
                       >
                         <img className="w-14" src="image/E-bharat.png" alt="" />
@@ -81,13 +84,13 @@ function ProductCard() {
                         className="title-font text-lg font-medium text-gray-900 mb-2 leading-5"
                         style={{ color: mode === "dark" ? "white" : "" }}
                       >
-                        {title}
+                        {title.slice(0, 22)}...
                       </h1>
                       <p className="leading-relaxed mb-3">
-                        {item.description.slice(0, 25)}...
+                        {item.description.slice(0, 18)}...
                       </p>
                       <p
-                        className="leading-relaxed mb-3"
+                        className="leading-relaxed mb-10"
                         style={{ color: mode === "dark" ? "white" : "" }}
                       >
                         ₹ {price}
@@ -95,7 +98,7 @@ function ProductCard() {
                     </div>
                     <div className="absolute bottom-3 z-[1000000] left-1/2 -translate-x-1/2">
                       <button
-                        onClick={() => addCart()}
+                        onClick={() => addCart(item)}
                         type="button"
                         className="focus:outline-none text-white bg-pink-600 hover:bg-pink-700 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm w-[45vw] sm:w-[35vh] md:w-[30vh] lg:w-[30vh] xl:w-[32vh] py-2 whitespace-nowrap"
                       >
