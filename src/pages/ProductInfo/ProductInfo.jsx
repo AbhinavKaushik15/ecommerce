@@ -1,17 +1,20 @@
 import { useContext, useEffect, useState } from "react";
 import Layout from "../../components/layout/Layout";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { doc, getDoc } from "firebase/firestore";
 import { fireDb } from "../../Firebase/Firebase";
 import MyContext from "../../context/data/MyContext";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../store/reducers/CartReducer";
+import { toast } from "react-toastify";
+import Loader from "../../components/loader/Loader";
 
 function ProductInfo() {
   const Context = useContext(MyContext);
   const { mode, loading, setLoading } = Context;
 
   const [products, setProducts] = useState("");
+  const navigate = useNavigate();
   const params = useParams();
   const dispatch = useDispatch();
 
@@ -33,8 +36,10 @@ function ProductInfo() {
 
   const cartItems = useSelector((state) => state.cart);
 
-  const addCart = () => {
-    dispatch(addToCart(products));
+  const addCart = (item) => {
+    dispatch(addToCart(item));
+    toast.success("Successful add to cart");
+    navigate("/cart");
   };
 
   useEffect(() => {
@@ -43,6 +48,7 @@ function ProductInfo() {
 
   return (
     <Layout>
+      {loading && <Loader />}
       <section className="text-gray-600 body-font overflow-hidden">
         <div className="container px-5 py-10 mx-auto">
           {products && (

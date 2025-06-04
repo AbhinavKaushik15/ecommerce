@@ -7,10 +7,11 @@ import { toast } from "react-toastify";
 import { addDoc, collection } from "firebase/firestore";
 import { fireDb } from "../../Firebase/Firebase";
 import { deleteFromCart } from "../../store/reducers/CartReducer";
+import Loader from "../../components/loader/Loader";
 
 function Cart() {
   const Context = useContext(MyContext);
-  const { mode } = Context;
+  const { mode, loading } = Context;
   const dispatch = useDispatch();
 
   const cartItems = useSelector((state) => state.cart);
@@ -35,7 +36,7 @@ function Cart() {
     setTotalAmount(temp);
   }, [cartItems]);
 
-  const shipping = parseInt(49);
+  const shipping = parseInt(100);
 
   const grandTotal = shipping + totalAmount;
 
@@ -73,7 +74,7 @@ function Cart() {
     var options = {
       key: import.meta.env.VITE_API_KEY_2,
       key_secret: import.meta.env.VITE_API_KEY_3,
-      amount: parseInt(grandTotal * 49),
+      amount: parseInt(grandTotal * 100),
       currency: "INR",
       order_receipt: "order_rcptid_" + name,
       name: "E-Bharat",
@@ -123,6 +124,7 @@ function Cart() {
 
   return (
     <Layout>
+      {loading && <Loader />}
       <div
         className="min-h-screen bg-gray-100 pt-5"
         style={{

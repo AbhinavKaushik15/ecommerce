@@ -3,19 +3,20 @@ import MyContext from "../../context/data/MyContext";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { addToCart } from "../../store/reducers/CartReducer";
+import { useNavigate } from "react-router-dom";
 
 function ProductCard() {
   const context = useContext(MyContext);
   const { mode, allProducts, searchKey, filterType, filterPrice } = context;
-
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const cartItems = useSelector((state) => state.cart);
 
-  const addCart = (allProducts) => {
-    dispatch(addToCart(allProducts));
-    window.location.href = "/";
-    toast.success("add to cart");
+  const addCart = (item) => {
+    dispatch(addToCart(item));
+    toast.success("Successful add to cart");
+    navigate("/cart");
   };
 
   useEffect(() => {
@@ -96,15 +97,15 @@ function ProductCard() {
                         ₹ {price}
                       </p>
                     </div>
-                    <div className="absolute bottom-3 z-[1000000] left-1/2 -translate-x-1/2">
-                      <button
-                        onClick={() => addCart(item)}
-                        type="button"
-                        className="focus:outline-none text-white bg-pink-600 hover:bg-pink-700 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm w-[45vw] sm:w-[35vh] md:w-[30vh] lg:w-[30vh] xl:w-[32vh] py-2 whitespace-nowrap"
-                      >
-                        Add To Cart
-                      </button>
-                    </div>
+                  </div>
+                  <div className="absolute bottom-5 z-[1000000] left-1/2 -translate-x-1/2">
+                    <button
+                      onClick={() => addCart(item)}
+                      type="button"
+                      className="focus:outline-none text-white bg-pink-600 hover:bg-pink-700 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm w-[45vw] sm:w-[35vh] md:w-[30vh] lg:w-[30vh] xl:w-[32vh] py-2 whitespace-nowrap"
+                    >
+                      Add To Cart
+                    </button>
                   </div>
                 </div>
               );
