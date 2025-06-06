@@ -34,7 +34,7 @@ function Login() {
   };
 
   return (
-    <div className=" flex justify-center items-center h-screen">
+    <div className="flex flex-col justify-center items-center h-screen">
       {loading && <Loader />}
       <div className=" bg-gray-800 px-10 py-10 rounded-xl ">
         <div className="">
@@ -78,6 +78,8 @@ function Login() {
           </h2>
         </div>
       </div>
+      <h1>Admin ID: abhinavsharmaas20000@gmail.com</h1>
+      <h1>Password: 123456</h1>
     </div>
   );
 }
