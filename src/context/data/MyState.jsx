@@ -117,7 +117,7 @@ const MyState = (props) => {
     getProducts();
   }, []);
 
-  const editHandle = (item) => {
+  const editHandle = (item) => {    
     setProducts(item);
   };
 

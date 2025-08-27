@@ -92,7 +92,7 @@ function Signup() {
         </div>
         <div>
           <h2 className="text-white">
-            Have an account{" "}
+            Have an account
             <Link className=" text-red-500 font-bold" to={"/login"}>
               Login
             </Link>
